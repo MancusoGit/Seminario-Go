@@ -22,6 +22,10 @@ func main() {
 	frase, _ := reader.ReadString('\n')
 	fmt.Println()
 	fmt.Println("frase original: ", frase)
-	fmt.Println("frase modificada: ", ejercicios.Ocurrencias(frase, "hola", "puto"))
+	fmt.Println("frase modificada: ", ejercicios.Ocurrencias(frase, "hola", "auto"))
 	fmt.Println()
+	fmt.Println("Ejercicio 4 : ")
+	fmt.Println("El resultado de la función MayorMenor es:", ejercicios.MayorMenor())
+	fmt.Println("El resultado de la función MenorMayor es:", ejercicios.MenorMayor()) // no se puede dividir por 0 (si se ingresa un numero negativo da error)
+	fmt.Println("El resultado de la función MayorMenorFlotante es:", ejercicios.MayorMenorFlotante())
 }
