@@ -22,13 +22,13 @@ func main() {
 		fmt.Println()
 	*/
 
-	fmt.Println("Ejercicio Obligatorio 1 : ")
+	fmt.Println("Ejercicio Obligatorio 1  ")
 	ejercicios.CambiarPalabras()
 	fmt.Println()
-	fmt.Println("Ejercicio Obligatorio 2 : ")
+	fmt.Println("Ejercicio Obligatorio 2  ")
 	ejercicios.EjecutarEjOb2()
 	fmt.Println()
-	fmt.Println("Ejercicio Obligatorio 3 : ")
+	fmt.Println("Ejercicio Obligatorio 3  ")
 	ejercicios.ProbarOcurrencias()
 	fmt.Println()
 }
