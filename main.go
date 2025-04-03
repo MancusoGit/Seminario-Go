@@ -7,7 +7,9 @@ import (
 
 func main() {
 
-	/*	fmt.Println("Ejercicio 1 : ")
+	/*	
+ 		Ejercicios Opcionales:
+ 		fmt.Println("Ejercicio 1 : ")
 		ejercicios.Imprimir250()
 		fmt.Println()
 		fmt.Println("Ejercicio 2 : ")
