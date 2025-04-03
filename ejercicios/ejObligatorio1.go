@@ -1,6 +1,9 @@
 package ejercicios
 
 import (
+	"bufio"
+	"fmt"
+	"os"
 	"strings"
 )
 
@@ -48,4 +51,14 @@ func Ocurrencias(frase, ocurrencia, reemplazo string) string {
 
 	return resultado.String() // retorna el resultado
 
+}
+
+func CambiarPalabras() {
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Print("Ingrese una frase: ")
+	frase, _ := reader.ReadString('\n')
+	fmt.Println()
+	fmt.Println("frase original: ", frase)
+	fmt.Println("frase modificada: ", Ocurrencias(frase, "hola", "auto"))
+	fmt.Println()
 }

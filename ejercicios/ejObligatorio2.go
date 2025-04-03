@@ -1,6 +1,9 @@
 package ejercicios
 
 import (
+	"bufio"
+	"fmt"
+	"os"
 	"strings"
 )
 
@@ -27,4 +30,15 @@ func revertirPalabra(palabra string, resultado *strings.Builder) {
 	for i := len(palabra) - 1; i >= 0; i-- { // recorre la palabra al reves
 		resultado.WriteByte(palabra[i]) // agrega la letra al resultado
 	}
+}
+
+func EjecutarEjOb2() {
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Print("Ingrese una frase: ")
+	frase, _ := reader.ReadString('\n')
+	fmt.Println()
+	fmt.Println("Frase original: ", frase)
+	fmt.Println()
+	fmt.Println("Frase modificada: ", ImparReverb(frase))
+	fmt.Println()
 }
