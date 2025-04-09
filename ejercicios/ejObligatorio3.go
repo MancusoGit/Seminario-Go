@@ -9,40 +9,31 @@ import (
 )
 
 func cambiarMinusMayus(palabras, ocurrencia string) string {
-	frase := strings.Fields(palabras) // crea un slice de las palabras
-	var result strings.Builder
-	ocurrencia = strings.TrimSpace(ocurrencia) // elimina espacios en blanco al principio y al final
+	frase := strings.Fields(palabras)          // creo un slice de las palabras
+	var result strings.Builder                 //creo un buffer para construir la frase resultante
+	ocurrencia = strings.TrimSpace(ocurrencia) //elimino espacios en blanco al principio y al final
 
 	for i, palabra := range frase {
-		if strings.EqualFold(palabra, ocurrencia) {
-			permutarChars(&result, palabra, ocurrencia)
+		if strings.EqualFold(palabra, ocurrencia) { //comparo sin tener en cuenta mayusculas y minusculas
+			permutacionChars(&result, palabra)
 		} else {
 			result.WriteString(palabra)
 		}
-
 		if i < len(frase)-1 {
-			result.WriteString(" ") // se agregan espacios entre palabras
+			result.WriteString(" ") //agrego espacios entre palabras
 		}
 	}
-	return result.String()
+	return result.String() //devuelvo la frase resultante
 }
 
-func permutarChars(result *strings.Builder, palabraFrase, comparacionFrase string) {
-	palabra := []rune(palabraFrase)
-	comparacion := []rune(comparacionFrase)
-	for i, char := range palabra {
-		if palabra[i] == comparacion[i] {
-			if unicode.ToLower(comparacion[i]) == palabra[i] {
-				result.WriteRune(unicode.ToUpper(char)) // paso a mayuscula
-			} else {
-				result.WriteRune(unicode.ToLower(char)) // paso a minuscula
-			}
+// esta funcion recibe el buffer por referencia y la palabra de la frase e intercambia los caracteres
+// entre mayusculas y minusculas
+func permutacionChars(result *strings.Builder, palabraFrase string) {
+	for _, char := range palabraFrase {
+		if unicode.IsLower(char) {
+			result.WriteRune(unicode.ToUpper(char)) // paso a mayuscula
 		} else {
-			if unicode.ToUpper(comparacion[i]) == palabra[i] {
-				result.WriteRune(unicode.ToLower(char)) // paso a minuscula
-			} else {
-				result.WriteRune(unicode.ToUpper(char)) // paso a mayuscula
-			}
+			result.WriteRune(unicode.ToLower(char)) // paso a minuscula
 		}
 	}
 }

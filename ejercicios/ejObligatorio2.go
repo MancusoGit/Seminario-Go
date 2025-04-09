@@ -7,11 +7,10 @@ import (
 	"strings"
 )
 
-func ImparReverb(palabra string) string {
+func ImparReverb(frase string) string {
 	// Esta funcion recibe una palabra y devuelve la misma palabra pero con las letras en orden inverso
-
-	palabras := strings.Fields(palabra) // convierte la palabra en un slice de palabras
-	var resultado strings.Builder       // crea un buffer de strings
+	palabras := strings.Fields(frase) // convierte la palabra en un slice de palabras
+	var resultado strings.Builder     // crea un buffer de strings
 	for i := 0; i < len(palabras); i++ {
 		if i%2 == 0 { // si es par
 			revertirPalabra(palabras[i], &resultado)
@@ -26,9 +25,10 @@ func ImparReverb(palabra string) string {
 }
 
 func revertirPalabra(palabra string, resultado *strings.Builder) {
+	letras := []rune(palabra) // convierte la palabra en un slice de runes
 	// Esta funcion recibe una palabra y la agrega al resultado pero en orden inverso
-	for i := len(palabra) - 1; i >= 0; i-- { // recorre la palabra al reves
-		resultado.WriteByte(palabra[i]) // agrega la letra al resultado
+	for i := len(letras) - 1; i >= 0; i-- { // recorre la palabra al reves
+		resultado.WriteRune(letras[i]) // agrega la letra al resultado
 	}
 }
 
